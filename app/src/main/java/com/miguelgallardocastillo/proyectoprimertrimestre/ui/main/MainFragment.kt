@@ -9,6 +9,7 @@ import android.view.View.VISIBLE
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.core.os.bundleOf
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.miguelgallardocastillo.proyectoprimertrimestre.R
@@ -73,13 +74,12 @@ class MainFragment : Fragment(R.layout.fragment_main), SearchView.OnQueryTextLis
                 adapter.notifyDataSetChanged()
                 binding.progress.visibility = GONE
             }
-
             binding.swipe.isRefreshing = false
         }
-
         binding.searchView.setOnQueryTextListener(this)
     }//Fin del onViewCreated
 
+    //Método al que se llama cuando se pulsa en el botón de buscar en el searchView
     override fun onQueryTextSubmit(busqueda: String?): Boolean {
 
         if (!busqueda.isNullOrEmpty()) {
@@ -94,15 +94,9 @@ class MainFragment : Fragment(R.layout.fragment_main), SearchView.OnQueryTextLis
         return true
     }
 
-
     override fun onQueryTextChange(búsqueda: String?): Boolean {
         return true
     }
-
-    //Método al que se llama cuando se pulsa en el botón de buscar en el searchView
-
-
-
 
 }//Fin del fragment.
 

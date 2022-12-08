@@ -19,5 +19,16 @@
         android:name="com.miguelgallardocastillo.proyectoprimertrimestre.ui.detail.DetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail" />
+   <fragment
+       android:id="@+id/favouritesFragment"
+       android:name="com.miguelgallardocastillo.proyectoprimertrimestre.ui.main.FavouritesFragment"
+       android:label="fragment_favourites"
+       tools:layout="@layout/fragment_favourites">
+        <action
+            app:destination="@id/detailFragment"
+            android:id="@+id/action_favouritesFragment_to_DetailFragment"
+           />
+
+   </fragment>
 
 </navigation>

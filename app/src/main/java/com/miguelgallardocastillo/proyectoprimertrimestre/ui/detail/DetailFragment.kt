@@ -11,9 +11,9 @@ import androidx.core.view.setPadding
 import androidx.fragment.app.viewModels
 import com.miguelgallardocastillo.proyectoprimertrimestre.R
 import com.miguelgallardocastillo.proyectoprimertrimestre.databinding.FragmentDetailBinding
+import com.miguelgallardocastillo.proyectoprimertrimestre.databinding.FragmentFavouritesBinding
 import com.miguelgallardocastillo.proyectoprimertrimestre.model.Receta
 import com.miguelgallardocastillo.proyectoprimertrimestre.ui.main.glide
-
 
 
 class DetailFragment : Fragment(R.layout.fragment_detail) {
@@ -21,6 +21,7 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
     private  val viewModel: DetailViewModel by viewModels {
         DetailViewModelFactory(arguments?.getParcelable<Receta>(EXTRA_RECETA)!!)
     }
+    val recetasFavoritas = mutableListOf<Receta>()
 
     companion object {
         //El valor de esta constante es estática.
@@ -47,8 +48,14 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
                 val intent  = Intent(Intent.ACTION_VIEW, uri)
                 startActivity(intent)
             }
+            binding.floatingActionButton.setOnClickListener(){
+                recetasFavoritas.add(receta)
+            }
         }
+    }
 
+    suspend fun getRecetasFavoritas(): MutableList<Receta> {
+        return this.recetasFavoritas
     }
 
 
