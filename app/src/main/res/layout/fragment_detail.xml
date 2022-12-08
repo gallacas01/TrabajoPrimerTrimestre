@@ -24,7 +24,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
-                android:background="@drawable/rounded_corner"
+                android:background="@drawable/rounded_corner_bg_blue"
                 android:gravity="center"
                 android:lines="2"
                 android:padding="4dp"
@@ -40,26 +40,86 @@
                 android:scaleType="centerCrop" />
 
             <TextView
-                android:id="@+id/tiempoPreparacion"
+                android:id="@+id/macronutrientes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
-                android:background="@drawable/rounded_corner"
+                android:background="@drawable/rounded_corner_bg_blue"
                 android:gravity="center"
                 android:padding="8dp"
-                android:text="Tiempo de preparación: "
+                android:text="Macronutrientes "
                 android:textColor="@color/white"
                 android:textSize="25dp" />
 
             <TextView
-                android:id="@+id/numComensales"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/fat"
                 android:layout_margin="4dp"
-                android:background="@drawable/rounded_corner"
+                android:textColor="@color/white"
+                android:text="Grasas:"
+                android:textSize="22dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/carbs"
+                android:layout_margin="4dp"
+                android:textColor="@color/white"
+                android:text="Carbohidratos:"
+                android:textSize="22dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/protein"
+                android:layout_margin="4dp"
+                android:textColor="@color/white"
+                android:text="Proteínas:"
+                android:textSize="22dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="3dp"
+                android:background="@drawable/roundend_corner_bg_white">
+
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/kcal"
+                    android:layout_margin="4dp"
+                    android:textColor="#015ABA"
+                    android:text="Kcal:"
+                    android:textSize="22dp"
+                    android:gravity="start"/>
+
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/weight"
+                    android:layout_margin="4dp"
+                    android:textColor="#015ABA"
+                    android:text="Peso:"
+                    android:textSize="22dp"
+                    android:gravity="end"/>
+            </LinearLayout>
+
+
+
+            <TextView
+                android:id="@+id/tipoReceta"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:background="@drawable/rounded_corner_bg_blue"
                 android:gravity="center"
                 android:padding="8dp"
-                android:text="Número de comensales:  "
+                android:text="Tipo de receta:  "
                 android:textColor="@color/white"
                 android:textSize="25dp" />
 
@@ -72,14 +132,6 @@
                 android:gravity="center"
                 android:text="VER Receta"
                 android:textSize="26dp" />
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/floatingActionButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                android:src="@drawable/ic_baseline_favorite_border_24"
-                app:layout_anchorGravity="bottom|right" />/>
 
         </LinearLayout>
 

@@ -31,7 +31,11 @@ class MainViewModel(app_id: String,app_key:String): ViewModel()  {
                 it.recipe.image,
                 it.recipe.calories.toString(),
                 it.recipe.mealType[0],
-                it.recipe.url
+                it.recipe.url,
+                it.recipe.totalNutrients.FAT.quantity.toString(),
+                it.recipe.totalNutrients.chocdf.quantity.toString(),
+                it.recipe.totalNutrients.PROCNT.quantity.toString(),
+                it.recipe.totalWeight.toString()
             )
         }
         return recetas
@@ -54,7 +58,11 @@ class MainViewModel(app_id: String,app_key:String): ViewModel()  {
                 it.recipe.image,
                 it.recipe.calories.toString(),
                 it.recipe.mealType[0],
-                it.recipe.url
+                it.recipe.url,
+                it.recipe.totalNutrients.FAT.quantity.toString(),
+                it.recipe.totalNutrients.chocdf.quantity.toString(),
+                it.recipe.totalNutrients.PROCNT.quantity.toString(),
+                it.recipe.totalWeight.toString()
             )
         }
         return recetas

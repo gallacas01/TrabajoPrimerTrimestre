@@ -37,7 +37,7 @@ class MainFragment : Fragment(R.layout.fragment_main), SearchView.OnQueryTextLis
             getString(R.string.app_name)
 
         viewModel.state.observe(viewLifecycleOwner) { state ->
-            binding.textoBienvenida.text = "¿Qué le apetece preparar hoy?"
+            binding.textoBienvenida.text = "¿Qué te apetece preparar hoy?"
             binding.progress.visibility = if (state.loading) VISIBLE else GONE
             state.recetas?.let {
                 adapter.listaRecetas = it
@@ -58,7 +58,7 @@ class MainFragment : Fragment(R.layout.fragment_main), SearchView.OnQueryTextLis
 
             CoroutineScope(Dispatchers.Main).launch {
                 binding.progress.visibility = VISIBLE
-                binding.textoBienvenida.text = "¡Disfrute de más recetas!"
+                binding.textoBienvenida.text = "¡Disfruta de más recetas!"
                 val recipes = viewModel.obtenerRecetasRandom()
                 val recetas =
                     recipes.map { //El result es la lista que devuelve el RemoteConnection.
@@ -67,7 +67,11 @@ class MainFragment : Fragment(R.layout.fragment_main), SearchView.OnQueryTextLis
                             it.image,
                             it.calories.toString(),
                             it.mealType.toString(),
-                            it.urlReceta
+                            it.urlReceta,
+                            it.fat,
+                            it.carbs,
+                            it.protein,
+                            it.weight
                         )
                     }
                 adapter.listaRecetas = recetas

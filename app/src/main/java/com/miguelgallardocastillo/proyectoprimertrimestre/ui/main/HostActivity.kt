@@ -17,41 +17,11 @@ import com.miguelgallardocastillo.proyectoprimertrimestre.databinding.ActivityMa
 class HostActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityMainBinding
-    private val sharedViewModel: SharedViewModel by viewModels()
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        val inflater: MenuInflater = menuInflater
-        inflater.inflate(R.menu.menu, menu)
-        return true
-    }
-
-    //Instanciar
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-
-        return when (item.itemId) {
-            R.id.home -> {
-
-                findNavController(R.id.fragmentContainerView).navigate(R.id.mainFragment)
-                true
-            }
-            R.id.favourites -> {
-
-                findNavController(R.id.fragmentContainerView).navigate(R.id.favouritesFragment)
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
-    }
-
-
-}//Fin de
+}//Fin del HostActivity
